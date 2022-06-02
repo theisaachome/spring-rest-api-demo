@@ -8,7 +8,7 @@ import lombok.Data;
  */
 
 @Data
-public class PostDTO {
+public class PostDto {
 	private Long id;
 	private String title;
 	private String description;
