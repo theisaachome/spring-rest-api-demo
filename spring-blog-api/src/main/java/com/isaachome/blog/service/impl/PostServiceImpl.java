@@ -68,7 +68,6 @@ public class PostServiceImpl implements PostService {
 	@Override
 	public void deletePostById(long id) {
 		Post post = postRepo.findById(id).orElseThrow(()-> new ResourceNotFoundException("Post", "id", id));
-		
 		postRepo.delete(post);
 	}
 
@@ -106,13 +105,6 @@ public class PostServiceImpl implements PostService {
 //		post.setContent(postDto.getContent());
 		Post post = modelMapper.map(postDto,Post.class);
 		return post;
-	}
-
-
-	@Override
-	public Post getPostByIdV2(long id) {
-		// TODO Auto-generated method stub
-		return postRepo.findById(id).orElseThrow(() -> new ResourceNotFoundException("", "", id));
 	}
 
 
